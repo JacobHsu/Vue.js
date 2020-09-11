@@ -1,0 +1,19 @@
+{
+  "name": "vue.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:JacobHsu/vue.js.git",
+  "author": "jacobhsu <jacob.hsu.tw@gmail.com>",
+  "home": "https://jacobhsu.github.io/vue.js",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.4"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "s": "yarn docs:dev",
+    "g": "yarn docs:build",
+    "d": "./deploy.sh"
+  }
+}
