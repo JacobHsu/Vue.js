@@ -41,8 +41,26 @@ module.exports = {
               }
             },
             nav: [
-              { text: '指南', link: '/zh-cn/guide/' }
+              { text: '指南', link: '/zh-cn/guide/' },
+              { text: 'API', link: '/zh-cn/api/' },
+              { text: '套件', link: '/zh-cn/npm/' },
+              { text: '风格', link: '/zh-cn/style/' },
+              {
+                  text: '视频教程',
+                  ariaLabel: '视频教程',
+                  items: [
+                    { text: 'DCloud 视频教程', link: 'https://learning.dcloud.io/#/' },
+                    { text: 'Vue Mastery (英文)', link: 'https://www.vuemastery.com/courses/' },
+                    { text: 'Vue School (英文)', link: 'https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown' }
+                  ]
+              },
             ],
+            sidebar: {
+              '/zh-cn/guide/': genSidebarConfig('指南', '组件'),
+              '/zh-cn/api/': genSidebarAPI('API', 'Options'),
+              '/zh-cn/npm/': genSidebarNPM('套件', 'UI', 'API', 'Utility' ,'验证'),
+              '/zh-cn/style/': genSidebarStyle('风格'),
+            },
           },
           '/en': {
               selectText: 'Languages',
@@ -57,4 +75,122 @@ module.exports = {
           }
       }
   }
+}
+
+function genSidebarConfig (title, title2) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'instance',
+        'scoped-css',
+        'list',
+        'events',
+        'transitions',
+        'forms',
+        'typescript'
+      ]
+    },
+    {
+      title: title2,
+      collapsable: false,
+      children: [
+        'components-dynamic-async',
+        'components-edge-cases'
+      ]
+    }
+
+  ]
+}
+
+function genSidebarAPI (title, title2) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    },
+    {
+      title2,
+      collapsable: false,
+      children: [
+        'options-composition',
+      ]
+    }
+  ]
+}
+
+// '套件', 'UI', 'API', 'Utility' ,'验证'
+function genSidebarNPM (title, title2, title3, title4, title5) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'debug',
+        'bootstrap-vue',
+        'request',
+        'vue-multiselect',
+        'vuejs-datepicker',
+        'vue-star-rating',
+        'data',
+        'i18n',
+        'element-ui',
+        'vue-chartjs',
+        'unit-testing',
+        'sass-loader',
+        'postcss-pxtorem'
+      ]
+    },
+    {
+      title: title2,
+      collapsable: false,
+      children: [
+        'ui'
+      ]
+    },
+    {
+      title: title3,
+      collapsable: false,
+      children: [
+        'axios',
+        'mockjs',
+        'json-server',
+        'cors',
+        'stompjs'
+      ]
+    },
+    {
+      title: title4,
+      collapsable: false,
+      children: [
+        'moment'
+      ]
+    },
+    {
+      title: title5,
+      collapsable: false,
+      children: [
+        'vee-validate'
+      ]
+    }
+  ]
+}
+
+function genSidebarStyle (title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'essential'
+      ]
+    }
+  ]
 }
