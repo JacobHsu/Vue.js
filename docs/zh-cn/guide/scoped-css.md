@@ -108,3 +108,13 @@ vue组件编译后，会将 template 中的每个元素加入 [data-v-xxxx] 属�
 ```
 
 有些像 Sass 之类的预处理器无法正确解析 `>>>`。这种情况下你可以使用 `/deep/` 操作符取而代之——这是一个 `>>>` 的别名，同样可以正常工作。
+
+ex: bootstrap-vue form-select change border
+
+```js
+<style lang="scss" scoped>
+.form-group /deep/ .custom-select {
+  border: 1px solid #fff;
+}
+</style>
+```
