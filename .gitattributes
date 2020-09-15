@@ -1,3 +1,4 @@
 deploy.sh linguist-detectable=false
 *.html linguist-detectable=false
 *.js linguist-language=Vue
+*.md linguist-language=Vue
