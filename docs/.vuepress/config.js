@@ -54,12 +54,31 @@ module.exports = {
                     { text: 'Vue School (英文)', link: 'https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown' }
                   ]
               },
+              { text: 'Vuex', link: '/zh-cn/vuex/' },
+              { text: 'VueRouter', link: '/zh-cn/vuerouter/' },
+              { text: 'VueLoader', link: '/zh-cn/vueloader/' },
+              {
+                text: '工具',
+                ariaLabel: '工具',
+                items: [
+                  { text: 'VSCode', link: '/zh-cn/vscode/' },
+                  { text: 'ESlint', link: '/zh-cn/eslint/' },
+                  { text: 'Images', link: '/zh-cn/images/' },
+                  { text: 'Webpack', link: '/zh-cn/webpack/' },
+                  { text: 'Debug', link: '/zh-cn/debug/' },
+                  { text: 'Server', link: '/zh-cn/server/' },
+                  { text: 'Notepad', link: '/zh-cn/notepad/' },
+                ]
+              }
             ],
             sidebar: {
               '/zh-cn/guide/': genSidebarConfig('指南', '组件', '复用'),
               '/zh-cn/api/': genSidebarAPI('API', 'Options'),
               '/zh-cn/npm/': genSidebarNPM('套件', 'UI', 'API', 'Utility' ,'验证'),
               '/zh-cn/style/': genSidebarStyle('风格'),
+              '/zh-cn/vuex/': genSidebarVuex('Vuex', '核心概念'),
+              '/zh-cn/vuerouter/': genSidebarVueRouter('VueRouter'),
+              '/zh-cn/vueloader/': genSidebarLoader('VueLoader')
             },
           },
           '/en': {
@@ -199,6 +218,58 @@ function genSidebarStyle (title) {
       children: [
         '',
         'essential'
+      ]
+    }
+  ]
+}
+
+function genSidebarVuex (title, title2) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'debug'
+      ]
+    },
+    {
+      title: title2,
+      collapsable: false,
+      children: [
+        'state',
+        'getters',
+        'actions',
+        'mutations'
+      ]
+    }
+  ]
+}
+
+function genSidebarVueRouter (title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'nested-routes',
+        'redirect-and-alias',
+        'navigation-guards'
+      ]
+    }
+  ]
+}
+
+function genSidebarLoader (title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'pre-processors',
+        'css-modules'
       ]
     }
   ]
