@@ -1,2 +1,2 @@
-deploy.sh linguist-detectable=false
+# deploy.sh linguist-detectable=false
 deploy.sh linguist-language=Vue
