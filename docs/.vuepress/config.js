@@ -67,6 +67,7 @@ module.exports = {
                   { text: 'Webpack', link: '/zh-cn/webpack/' },
                   { text: 'Debug', link: '/zh-cn/debug/' },
                   { text: 'Server', link: '/zh-cn/server/' },
+                  { text: 'VuePress', link: 'https://vuepress.vuejs.org/zh/' },
                   { text: 'Notepad', link: '/zh-cn/notepad/' },
                 ]
               }
