@@ -98,7 +98,7 @@ module.exports = {
 }
 
 // '指南', '组件', '复用'
-function genSidebarConfig (title, title2, title3) {
+function genSidebarConfig (title, components, title3) {
   return [
     {
       title,
@@ -115,9 +115,10 @@ function genSidebarConfig (title, title2, title3) {
       ]
     },
     {
-      title: title2,
+      title: components,
       collapsable: false,
       children: [
+        'components-slots',
         'components-dynamic-async',
         'components-edge-cases'
       ]
