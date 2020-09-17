@@ -154,7 +154,7 @@ function genSidebarAPI (title, title2) {
 }
 
 // '套件', 'UI', 'API', 'Utility' ,'验证'
-function genSidebarNPM (title, title2, title3, utility, title5) {
+function genSidebarNPM (title, ui, title3, utility, title5) {
   return [
     {
       title,
@@ -177,10 +177,11 @@ function genSidebarNPM (title, title2, title3, utility, title5) {
       ]
     },
     {
-      title: title2,
+      title: ui,
       collapsable: false,
       children: [
-        'ui'
+        'ui',
+        'iview'
       ]
     },
     {
