@@ -73,7 +73,7 @@ module.exports = {
               }
             ],
             sidebar: {
-              '/zh-cn/guide/': genSidebarConfig('指南', '组件', '复用'),
+              '/zh-cn/guide/': genSidebarConfig('指南', '组件', '复用', '内在'),
               '/zh-cn/api/': genSidebarAPI('API', 'Options'),
               '/zh-cn/npm/': genSidebarNPM('套件', 'UI', 'API', 'Utility' ,'验证'),
               '/zh-cn/style/': genSidebarStyle('风格'),
@@ -97,8 +97,8 @@ module.exports = {
   }
 }
 
-// '指南', '组件', '复用'
-function genSidebarConfig (title, components, title3) {
+// '指南', '组件', '复用', '内在'
+function genSidebarConfig (title, components, title3, reactivity) {
   return [
     {
       title,
@@ -129,8 +129,14 @@ function genSidebarConfig (title, components, title3) {
       children: [
         'mixins'
       ]
+    },
+    {
+      title: reactivity,
+      collapsable: false,
+      children: [
+        'reactivity'
+      ]
     }
-
   ]
 }
 
