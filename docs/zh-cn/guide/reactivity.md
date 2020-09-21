@@ -1,5 +1,57 @@
 # 深入响应式原理
 
+## 检测变化的注意事项
+
+由于 JavaScript 的限制，Vue **不能检测**数组和对象的变化。尽管如此我们还是有一些办法来回避这些限制并保证它们的响应性。
+
+## 对于对象
+
+Vue 无法检测 property 的添加或移除。由于 Vue 会在初始化实例时对 property 执行 getter/setter 转化，所以 property 必须在 `data` 对象上存在才能让 Vue 将它转换为响应式的。例如：
+
+```js
+var vm = new Vue({
+  data:{
+    a:1
+  }
+})
+
+// `vm.a` 是响应式的
+
+vm.b = 2
+// `vm.b` 是非响应式的
+```
+
+对于已经创建的实例，**Vue 不允许动态添加根级别的响应式 property**
+
+```js
+const app = new Vue({
+   //data中已經存在info根屬性
+  data: {
+    a: 1
+  }
+  // render: h => h(Suduko)
+}).$mount('#app1')
+
+Vue.set(app.data, 'b', 2) // output : error
+```
+
+> 不能在直接data上增加屬性，可以在data裡的對象上增加屬性。 例如:`Vue.set(vm.someobj, {a,”b”})`
+
+但是，可以使用 `Vue.set(object, propertyName, value)` 方法向嵌套对象添加响应式 property。例如，对于：
+
+`Vue.set(vm.someObject, 'b', 2)`
+
+您还可以使用 `vm.$set` 实例方法，这也是全局 `Vue.set` 方法的别名：
+
+`this.$set(this.someObject,'b',2)`
+
+有时你可能需要为已有对象赋值多个新 property，比如使用 `Object.assign()` 或 `_.extend()`。但是，这样添加到对象上的新 property 不会触发更新。在这种情况下，你应该用原对象与要混合进去的对象的 property 一起创建一个新的对象。
+
+```js
+// 代替 `Object.assign(this.someObject, { a: 1, b: 2 })`
+this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })
+```
+
 ## 异步更新队列
 
 Vue 在更新 DOM 时是异步执行的。只要侦听到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据变更。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作是非常重要的。然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。Vue 在内部对异步队列尝试使用原生的 `Promise.then`、`MutationObserver` 和 `setImmediate`，如果执行环境不支持，则会采用 `setTimeout(fn, 0)` 代替。
