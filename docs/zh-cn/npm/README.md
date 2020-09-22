@@ -105,10 +105,6 @@ package.json
 
 ## NPMs
 
-[![NPM](https://nodei.co/npm/bootstrap-vue.png?downloads=true&stars=true)](https://nodei.co/npm/bootstrap-vue/)
-
-[![NPM](https://nodei.co/npm/json-server.png?downloads=true&stars=true)](https://nodei.co/npm/json-server/)
-
 [![NPM](https://nodei.co/npm/vue-multiselect.png?downloads=true&stars=true)](https://nodei.co/npm/vue-multiselect/)
 
 [![NPM](https://nodei.co/npm/vuejs-datepicker.png?downloads=true&stars=true)](https://nodei.co/npm/vuejs-datepicker/)
@@ -118,13 +114,6 @@ package.json
 [![NPM](https://nodei.co/npm/faker.png?downloads=true&stars=true)](https://nodei.co/npm/faker/)  
 [![NPM](https://nodei.co/npm/vue-localstorage.png?downloads=true&stars=true)](https://nodei.co/npm/vue-localstorage/)
 
-## Request
-
-[![NPM](https://nodei.co/npm/axios.png?downloads=true&stars=true)](https://nodei.co/npm/axios/)
-
-[![NPM](https://nodei.co/npm/humps.png?downloads=true&stars=true)](https://nodei.co/npm/humps/)
-
-[![NPM](https://nodei.co/npm/json-server.png?downloads=true&stars=true)](https://nodei.co/npm/json-server/)
 
 ## i18n
 

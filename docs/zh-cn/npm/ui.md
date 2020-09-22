@@ -3,6 +3,8 @@
 [11个免费开源后台管理系统模板](https://cloud.tencent.com/developer/article/1637897)  
 [Vue 组件库大评测 Element, iView, HeyUI, Ant Design Vue](https://juejin.im/post/6844903913553035272)  
 
+[![NPM](https://nodei.co/npm/bootstrap-vue.png?downloads=true&stars=true)](https://nodei.co/npm/bootstrap-vue/)
+
 [![NPM](https://nodei.co/npm/sass-loader.png?downloads=true&stars=true)](https://nodei.co/npm/sass-loader/)
 
 [![NPM](https://nodei.co/npm/semantic-ui.png?downloads=true&stars=true)](https://nodei.co/npm/semantic-ui/)

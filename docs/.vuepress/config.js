@@ -187,7 +187,8 @@ function genSidebarNPM (title, ui, title3, utility, title5) {
       collapsable: false,
       children: [
         'ui',
-        'iview'
+        'iview',
+        'swiper'
       ]
     },
     {
@@ -205,6 +206,7 @@ function genSidebarNPM (title, ui, title3, utility, title5) {
       title: utility,
       collapsable: false,
       children: [
+        'utility',
         'moment',
         'crypto-js'
       ]
