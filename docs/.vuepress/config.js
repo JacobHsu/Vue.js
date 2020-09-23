@@ -241,7 +241,8 @@ function genSidebarVuex (title, title2) {
       collapsable: false,
       children: [
         '',
-        'debug'
+        'debug',
+        'structure'
       ]
     },
     {
