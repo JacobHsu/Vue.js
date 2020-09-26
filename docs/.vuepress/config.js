@@ -111,6 +111,7 @@ function genSidebarConfig (guide, computed, components, title3, reactivity) {
         'events',
         'transitions',
         'forms',
+        'syntax',
         'typescript',
         'react'
       ]
