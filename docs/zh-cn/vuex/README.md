@@ -76,4 +76,3 @@ import shop from "@/api/shop";
 ## 什么情况下我应该使用 Vuex？
 
 如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 [store 模式](https://cn.vuejs.org/v2/guide/state-management.html#简单状态管理起步使用)就足够您所需了
-

@@ -261,7 +261,8 @@ function genSidebarVuex (title, title2) {
         'state',
         'getters',
         'actions',
-        'mutations'
+        'mutations',
+        'store'
       ]
     }
   ]
