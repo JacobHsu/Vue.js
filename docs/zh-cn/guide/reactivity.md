@@ -1,5 +1,7 @@
 # 深入响应式原理 `Vue.set`
 
+![Alt reactivity](https://cn.vuejs.org/images/data.png)
+
 ## 检测变化的注意事项
 
 由于 JavaScript 的限制，Vue **不能检测**数组和对象的变化。尽管如此我们还是有一些办法来回避这些限制并保证它们的响应性。
@@ -66,6 +68,13 @@ https://jsbin.com/kenekoh/edit?html,output
 </body>
 ```
 
+有时你可能需要为已有对象赋值多个新 property，比如使用 `Object.assign()` 或 `_.extend()`。但是，这样添加到对象上的新 property 不会触发更新。在这种情况下，你应该用原对象与要混合进去的对象的 property 一起创建一个新的对象。
+
+```js
+// 代替 `Object.assign(this.someObject, { a: 1, b: 2 })`
+this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })
+```
+
 ### Vue 不能检测对象属性的添加或删除
 
 ```js
@@ -89,12 +98,8 @@ https://jsbin.com/kenekoh/edit?html,output
 ```
 https://juejin.im/post/5aa89ab9f265da238b7db328  
 
-有时你可能需要为已有对象赋值多个新 property，比如使用 `Object.assign()` 或 `_.extend()`。但是，这样添加到对象上的新 property 不会触发更新。在这种情况下，你应该用原对象与要混合进去的对象的 property 一起创建一个新的对象。
 
-```js
-// 代替 `Object.assign(this.someObject, { a: 1, b: 2 })`
-this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })
-```
+物件部分：[一開始沒有被註冊到的物件不會響應式更新](https://pjchender.blogspot.com/2017/05/vue-vue-reactivity.html)  
 
 ## 异步更新队列
 

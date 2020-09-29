@@ -277,7 +277,8 @@ function genSidebarVueRouter (title) {
         '',
         'nested-routes',
         'redirect-and-alias',
-        'navigation-guards'
+        'navigation-guards',
+        'history-mode'
       ]
     }
   ]
