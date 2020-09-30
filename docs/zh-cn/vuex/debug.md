@@ -44,3 +44,16 @@ npm install babel-preset-stage-2
 ```
 
 [使用vuex中的mapState踩坑记](https://www.jianshu.com/p/dad8d00dcddd)
+
+## Do not mutate vuex store state outside mutation handlers
+
+vuex 中操作数组，报错 [Do not mutate vuex store state outside mutation handlers](https://www.jianshu.com/p/09327119b009)  
+
+> vuex不允许直接改变state中的东西，必须通过mutations！！
+
+操作是这样，每次赋值新数组（selection）给temp,然后actions中commit motations改变state值currentseletedRows就报这个错。  
+
+`Array.prototype.shift()` - [JavaScript | MDN - Mozilla](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)  
+`shift()` 方法會移除並回傳陣列的第一個元素。此方法會改變陣列的長度。
+
+引用数据类型，vuex里的currentSelectedRows引用selection变量，如果不加slice,改变selection就直接改变vuex里的state,而vuex不允许直接改变state中的东西，必须通过mutations。
