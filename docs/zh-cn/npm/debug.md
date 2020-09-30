@@ -38,3 +38,12 @@ Module build failed: SyntaxError: Unexpected token
   ]
 }
 ```
+
+> core-js/modules/es6.function.name in ./node_modules/cache-loader
+
+`npm install --save core-js`
+
++ core-js@2.6.11
+
+`npm install --save vue`
+"vue": "^2.6.10" -> `"vue": "^2.6.12"`,
