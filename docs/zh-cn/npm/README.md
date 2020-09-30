@@ -78,6 +78,14 @@ npm install node-sass
 npm install -D sass-loader node-sass
 ```
 
+node-sass 安装失败 Failed at the node-sass@4.9.2 postinstall script.
+
+> npm ERR! node-sass@4.9.2 postinstall: `node scripts/build.js`
+
+卸载node-sass `npm uninstall node-sass`    
+重新安装指定的node-sass版本(安装失败的版本)   
+`npm install node-sass@4.9.0`
+
 > TypeError: loaderContext.getResolve is not a function
 
 sass-loader 版本过高 
