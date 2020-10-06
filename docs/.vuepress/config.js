@@ -177,14 +177,12 @@ function genSidebarNPM (title, ui, title3, utility, title5) {
       children: [
         '',
         'debug',
-        'bootstrap-vue',
         'request',
         'vue-multiselect',
         'vuejs-datepicker',
         'vue-star-rating',
         'data',
         'i18n',
-        'element-ui',
         'vue-chartjs',
         'unit-testing',
         'sass-loader',
@@ -196,6 +194,8 @@ function genSidebarNPM (title, ui, title3, utility, title5) {
       collapsable: false,
       children: [
         'ui',
+        'element-ui',
+        'bootstrap-vue',
         'iview',
         'swiper'
       ]

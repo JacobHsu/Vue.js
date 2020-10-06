@@ -21,6 +21,50 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 ```
 
+## layout
+
+[Variable width content](https://bootstrap-vue.org/docs/components/layout)
+
+[getbootstrap flex](https://getbootstrap.com/docs/4.4/utilities/flex/)
+
+```js
+<b-container class="bv-example-row">
+  <b-row class="justify-content-md-center">
+    <b-col col lg="2">1 of 3</b-col>
+    <b-col cols="12" md="auto">Variable width content</b-col>
+    <b-col col lg="2">3 of 3</b-col>
+  </b-row>
+</b-container>
+```
+
+## [color-variants-and-css-class-mapping](https://bootstrap-vue.org/docs/reference/color-variants#color-variants-and-css-class-mapping)
+
+src/assets/bootstrap-custom.css
+
+```css
+.btn-info2 {
+  color: #fff;
+  background-color: #0f929d;
+  border-color: #0f929d;
+}
+```
+
+main.js
+
+```js
+import '@/assets/bootstrap-custom.css'
+```
+
+.vue
+
+```js
+  <b-btn class="w-100 border-0" variant="info2"
+          type="submit"
+          @click.prevent="nextStep">
+    <span v-text="$t('g_next')"></span>
+  </b-btn>
+```
+
 ## [Bootstrap Icons](https://bootstrap-vue.org/docs/icons)
 
 main.js
