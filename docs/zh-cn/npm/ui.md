@@ -17,6 +17,7 @@
 
 [![NPM](https://nodei.co/npm/vue-backtotop.png?downloads=true&stars=true)](https://nodei.co/npm/vue-backtotop/)
 
+[![NPM](https://nodei.co/npm/vue-clipboards.png?downloads=true&stars=true)](https://nodei.co/npm/vue-clipboards/)
 
 ## [Font Awesome 6](https://fontawesome.com/)
 
@@ -41,6 +42,16 @@
 
 ```html
 <i class="fas fa-user-circle fa-2x"></i>
+```
+
+icon & text
+
+```js
+  <h5 class="text-danger mt-4">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+    <span v-text="`重要請備份`"></span>
+  </h5>
+
 ```
 
 ## codepen
