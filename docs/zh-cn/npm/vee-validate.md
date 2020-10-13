@@ -28,3 +28,29 @@ v-validate
 this seems to happen in any version after 3.0. I installed vee-validate@2.2.15 and it worked.
 
 `npm i vee-validate@2`
+
+## [Using The Custom Rule](https://vee-validate.logaretm.com/v2/guide/custom-rules.html#object-form)
+
+```js
+<input type="password"
+        v-model="form.password"
+        v-validate="{ required: true, min: 6, max: 20, numAndText: true }"
+```
+
+```js
+  import { isPwdValid } from '@/libs/ls'
+  created() {
+    this.$validator.extend('numAndText', {
+      getMessage: field => "必須包含6-20文字和數字",
+      validate: value => isPwdValid(value)
+    })
+  },
+```
+
+libs/ls
+
+```js
+export function isPwdValid(pwd) {
+  return new RegExp(/^(?=.*\d+)(?=.*[a-zA-Z])[0-9a-zA-Z]{6,20}$/).test(pwd)
+}
+```
