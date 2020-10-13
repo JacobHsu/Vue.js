@@ -33,3 +33,23 @@ new Vue({
 }
 </style>
 ```
+
+## [NavMenu 导航菜单](https://element.eleme.io/#/zh-CN/component/menu)
+
+Menu Attribute 
+mode > horizontal / vertical
+
+```js
+<el-menu
+  :default-active="activeMenu"
+  :collapse="isCollapse"
+  :background-color="variables.menuBg"
+  :text-color="variables.menuText"
+  :unique-opened="false"
+  :active-text-color="variables.menuActiveText"
+  :collapse-transition="false"
+  mode="vertical"
+>
+  <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
+</el-menu>
+```
