@@ -197,7 +197,8 @@ function genSidebarNPM (title, ui, title3, utility, title5) {
         'element-ui',
         'bootstrap-vue',
         'iview',
-        'swiper'
+        'swiper',
+        'nprogress'
       ]
     },
     {
