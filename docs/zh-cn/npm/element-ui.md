@@ -18,6 +18,33 @@ new Vue({
 });
 ```
 
+### vue-element-admin
+
+main.js
+
+```js
+import Element from 'element-ui'
+
+import './styles/element-variables.scss'
+import '@/styles/index.scss' // global css
+
+Vue.config.productionTip = false
+
+Vue.use(Element)
+
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
+```
+
+[styles/element-variables.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/element-variables.scss)
+
+```css
+@import "~element-ui/packages/theme-chalk/src/index";
+```
+
 [Dropdown 下拉菜单](https://element.eleme.cn/#/zh-CN/component/dropdown)
 
 指令事件 `@command="handleCommand"`
@@ -53,3 +80,5 @@ mode > horizontal / vertical
   <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
 </el-menu>
 ```
+
+> `<el-menu-item index="1">处理中心</el-menu-item>` not working check  `import './styles/element-variables.scss'`
