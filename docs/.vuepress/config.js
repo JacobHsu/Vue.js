@@ -127,6 +127,7 @@ function genSidebarConfig (guide, computed, components, title3, reactivity) {
       title: components,
       collapsable: false,
       children: [
+        'components-props',
         'components-slots',
         'components-dynamic-async',
         'components-edge-cases'

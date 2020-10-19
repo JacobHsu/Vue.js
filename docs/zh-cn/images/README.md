@@ -10,7 +10,7 @@ style.css
 ```css
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'icomoon' !important; /* 並存多組修改 font-family 名*/
   speak: never;
   font-style: normal;
   font-weight: normal;
