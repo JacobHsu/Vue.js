@@ -21,7 +21,11 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 ```
 
-## layout
+## [layout](https://bootstrap-vue.org/docs/components/layout)
+
+Use `<b-container>` for a responsive pixel width or
+`<b-container fluid>` for `width: 100%` across all viewport and device sizes.
+
 
 [Variable width content](https://bootstrap-vue.org/docs/components/layout)
 
