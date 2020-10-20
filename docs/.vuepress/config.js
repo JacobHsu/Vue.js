@@ -98,7 +98,7 @@ module.exports = {
 }
 
 // '指南', '组件', '复用', '内在'
-function genSidebarConfig (guide, computed, components, title3, reactivity) {
+function genSidebarConfig (guide, computed, components, mixins, reactivity) {
   return [
     {
       title: guide,
@@ -134,10 +134,11 @@ function genSidebarConfig (guide, computed, components, title3, reactivity) {
       ]
     },
     {
-      title: title3,
+      title: mixins,
       collapsable: false,
       children: [
-        'mixins'
+        'mixins',
+        'render-function'
       ]
     },
     {
