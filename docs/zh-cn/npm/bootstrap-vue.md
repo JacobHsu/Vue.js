@@ -69,6 +69,24 @@ import '@/assets/bootstrap-custom.css'
   </b-btn>
 ```
 
+## bootstrap-custom.css
+
+getbootstrap [colors](https://getbootstrap.com/docs/4.1/utilities/colors/)
+
+```html
+<input type="password"
+       v-model="form.password"
+       class="form-control border-0 bg-transparent"
+```
+
+.bg-transparent
+
+```css
+.bg-transparent {
+  background-color: transparent !important;
+}
+```
+
 ## [Bootstrap Icons](https://bootstrap-vue.org/docs/icons)
 
 main.js
