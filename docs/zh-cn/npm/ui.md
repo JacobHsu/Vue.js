@@ -19,6 +19,8 @@
 
 [![NPM](https://nodei.co/npm/vue-clipboards.png?downloads=true&stars=true)](https://nodei.co/npm/vue-clipboards/)
 
+[![NPM](https://nodei.co/npm//better-scroll.png?downloads=true&stars=true)](https://nodei.co/npm/better-scroll/)
+
 ## [Font Awesome 6](https://fontawesome.com/)
 
 \public\index.html

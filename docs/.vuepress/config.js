@@ -127,6 +127,7 @@ function genSidebarConfig (guide, computed, components, mixins, reactivity) {
       title: components,
       collapsable: false,
       children: [
+        'passing-props',
         'components-props',
         'components-slots',
         'components-dynamic-async',
