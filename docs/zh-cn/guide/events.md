@@ -97,6 +97,9 @@ methods: {
 <!-- 提交事件不再重载页面 -->
 <form v-on:submit.prevent="onSubmit"></form>
 
+假設我們今天有一顆按鈕，但是我不希望他就這樣直接submit出去
+希望他按下按鈕之後會跑出 alert，但是他不要送出資訊轉到submit.html
+
 <!-- 修饰符可以串联 -->
 <a v-on:click.stop.prevent="doThat"></a>
 
