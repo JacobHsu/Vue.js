@@ -23,6 +23,22 @@ var app = new Vue({
 
 > Hello Vue!
 
+```js
+export default {
+  data() {
+    return {
+      message:""
+    }
+  },
+```
+
+```js
+export default {
+  data: () => ({
+      message:"",
+  }),
+```
+
 ## Vue CLI
 
 [Vue CLI](https://cli.vuejs.org/zh/guide/) 是一个基于 Vue.js 进行快速开发的完整系统，提供：
