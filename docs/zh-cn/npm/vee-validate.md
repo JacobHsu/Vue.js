@@ -54,3 +54,17 @@ export function isPwdValid(pwd) {
   return new RegExp(/^(?=.*\d+)(?=.*[a-zA-Z])[0-9a-zA-Z]{6,20}$/).test(pwd)
 }
 ```
+
+## 組件間同步驗證
+
+利用同步執行API
+
+```js
+this.$validator.validateAll()
+.then(res => {
+  console.log('api1')
+})
+.then(res => {
+   console.log('api2)
+})
+```
