@@ -60,6 +60,26 @@ Vue.http.options.headers = {
 ```
 
 ```js
+    let headers = {
+        Authorization: "Bearer "
+    };
+
+    this.$http.post(
+      process.env.API_HOST +'/Auth/Login',
+      loginPayload,
+      {headers}).then(response => {
+        return response.body.data
+    }).then(res => {
+        // Promise {<pending>}
+        // __proto__: Promise
+        // [[PromiseState]]: "fulfilled"
+        // [[PromiseResult]]: Object
+        console.log(res)
+    });
+```
+
+
+```js
 Vue.http.interceptors.push((request, next) => {
     //登录成功后将后台返回的TOKEN在本地存下来,每次请求从sessionStorage中拿到存储的TOKEN值
     request.headers.set('x-auth-token', localStorage.getItem('TOKEN'));
