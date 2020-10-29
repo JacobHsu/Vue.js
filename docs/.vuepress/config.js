@@ -172,7 +172,7 @@ function genSidebarAPI (title, title2) {
 }
 
 // '套件', 'UI', 'API', 'Utility' ,'验证'
-function genSidebarNPM (title, ui, title3, utility, title5) {
+function genSidebarNPM (title, ui, api, utility, title5) {
   return [
     {
       title,
@@ -205,14 +205,15 @@ function genSidebarNPM (title, ui, title3, utility, title5) {
       ]
     },
     {
-      title: title3,
+      title: api,
       collapsable: false,
       children: [
         'axios',
         'mockjs',
         'json-server',
         'cors',
-        'stompjs'
+        'stompjs',
+        'signalr'
       ]
     },
     {
