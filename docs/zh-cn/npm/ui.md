@@ -19,7 +19,13 @@
 
 [![NPM](https://nodei.co/npm/vue-clipboards.png?downloads=true&stars=true)](https://nodei.co/npm/vue-clipboards/)
 
-[![NPM](https://nodei.co/npm//better-scroll.png?downloads=true&stars=true)](https://nodei.co/npm/better-scroll/)
+
+## component
+
+[better-scroll](https://nodei.co/npm/better-scroll/)
+
+[vue-count-to](https://nodei.co/npm/vue-count-to/)
+[Try the demo](http://panjiachen.github.io/countTo/demo/)
 
 ## [Font Awesome 6](https://fontawesome.com/)
 
