@@ -19,7 +19,6 @@
 
 [![NPM](https://nodei.co/npm/vue-clipboards.png?downloads=true&stars=true)](https://nodei.co/npm/vue-clipboards/)
 
-
 ## component
 
 [better-scroll](https://nodei.co/npm/better-scroll/)

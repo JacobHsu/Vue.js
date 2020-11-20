@@ -186,7 +186,6 @@ function genSidebarNPM (title, ui, api, utility, title5) {
         'vue-star-rating',
         'data',
         'i18n',
-        'vue-chartjs',
         'unit-testing',
         'sass-loader',
         'postcss-pxtorem'
@@ -200,8 +199,11 @@ function genSidebarNPM (title, ui, api, utility, title5) {
         'element-ui',
         'bootstrap-vue',
         'iview',
+        'vue-chartjs',
+        'echarts',
         'swiper',
-        'nprogress'
+        'nprogress',
+        'icon'
       ]
     },
     {
