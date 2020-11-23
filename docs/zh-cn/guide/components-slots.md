@@ -1,5 +1,27 @@
 # [插槽](https://cn.vuejs.org/v2/guide/components-slots.html)
 
+Slot 是一種內容分發(content distribution)的 API，中文翻譯為插槽，適合用在結構比較複雜，元件內容可以重複使用的地方。
+簡單說就是在 component 中可以預留空間，在父層再把內容放進去。
+
+```js
+Vue.component("component-basic", {
+  template: "<div>我是一般的component</div>"
+});
+```
+
+```js
+Vue.component("component-slot", {
+  template:
+    "<div><slot></slot></div>"
+});
+
+<template>
+  <component-slot>我是指定的內容</component-slot>
+</template>
+```
+
+編譯出： `<div>我是指定的內容</div>`
+
 ## 插槽内容
 
 Vue 实现了一套内容分发的 API，将 `<slot>` 元素作为承载分发内容的出口。
@@ -143,3 +165,111 @@ ex: https://codepen.io/JacobHsu/pen/zQwMdN
  `v-slot` 只能添加在 `<template>` 上
  注意默认插槽的缩写语法**不能**和具名插槽混用，因为它会导致作用域不明确
 :::
+
+## 作用域插槽
+
+
+有时让插槽内容能够访问子组件中才有的数据是很有用的。例如，设想一个带有如下模板的 `<current-user>` 组件：
+
+```html
+<span>
+  <slot>{{ user.lastName }}</slot>
+</span>
+```
+
+我们可能想换掉备用内容，用名而非姓来显示。如下：
+
+```html
+<current-user>
+  {{ user.firstName }}
+</current-user>
+```
+
+然而上述代码不会正常工作，因为只有 `<current-user>` 组件可以访问到 user 而我们提供的内容是在父级渲染的。
+
+为了让 user 在父级的插槽内容中可用，我们可以将 `user` 作为 `<slot>` 元素的一个 attribute 绑定上去：
+
+```html
+<span>
+  <slot v-bind:user="user">
+    {{ user.lastName }}
+  </slot>
+</span>
+```
+
+绑定在 `<slot>` 元素上的 attribute 被称为**插槽 prop**。现在在父级作用域中，我们可以使用带值的 v-slot 来定义我们提供的插槽 prop 的名字：
+
+```html
+<current-user>
+  <template v-slot:default="slotProps">
+    {{ slotProps.user.firstName }}
+  </template>
+</current-user>
+```
+
+在这个例子中，我们选择将包含所有插槽 prop 的对象命名为 `slotProps`，但你也可以使用任意你喜欢的名字。
+
+
+> 自 2.6.0 起有所更新。已废弃的使用 slot-scope attribute 的语法在[这里](https://cn.vuejs.org/v2/guide/components-slots.html#废弃了的语法)。
+
+带数据的插槽。样式父组件说了算，但内容可以显示子组件插槽绑定的。
+在 `<template>` 上使用特殊的 slot-scope attribute，可以接收传递给插槽的 prop
+
+父组件：
+
+```html
+template>
+  <div class="father">
+    <h3>这里是父组件</h3>
+    <!--第一次使用：用flex展示数据-->
+    <child>
+      <template slot-scope="user">
+        <div class="tmpl">
+          <span v-for="item in user.data">{{item}}</span>
+        </div>
+      </template>
+    </child>
+
+    <!--第二次使用：用列表展示数据-->
+    <child>
+      <template slot-scope="user">
+        <ul>
+          <li v-for="item in user.data">{{item}}</li>
+        </ul>
+      </template>
+    </child>
+
+    <!--第三次使用：直接显示数据-->
+    <child>
+      <template slot-scope="user">
+       {{user.data}}
+      </template>
+    </child>
+
+    <!--第四次使用：不使用其提供的数据, 作用域插槽退变成匿名插槽-->
+    <child>
+      我就是模板
+    </child>
+  </div>
+</template>
+```
+
+子组件：
+
+```html
+<template>
+  <div class="child">
+    <h3>这里是子组件</h3>
+    // 作用域插槽
+    <slot  :data="data"></slot>
+  </div>
+</template>
+
+ export default {
+    data: function(){
+      return {
+        data: ['Slots','Named Slots','slot-scope']
+      }
+    }
+}
+```
