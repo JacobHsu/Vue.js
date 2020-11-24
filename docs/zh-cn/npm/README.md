@@ -155,6 +155,12 @@ package.json
 ex: regreceive / [exchange](https://github.com/regreceive/exchange)
 [Error: Node Sass does not yet support your current environment: Windows 64-bit with false](https://stackoverflow.com/questions/37415134/error-node-sass-does-not-yet-support-your-current-environment-windows-64-bit-w)
 
+## package.json
+
+[![NPM](https://nodei.co/npm/concurrently.png?downloads=true&stars=true)](https://nodei.co/npm/concurrently/)
+
+[![NPM](https://nodei.co/npm/npm-run-all.png?downloads=true&stars=true)](https://nodei.co/npm/npm-run-all/)
+
 ## unit-testing
 
 [![NPM](https://nodei.co/npm/flush-promises.png?downloads=true&stars=true)](https://nodei.co/npm/flush-promises/)
