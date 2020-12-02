@@ -122,6 +122,9 @@ package.json
 [![NPM](https://nodei.co/npm/faker.png?downloads=true&stars=true)](https://nodei.co/npm/faker/)  
 [![NPM](https://nodei.co/npm/vue-localstorage.png?downloads=true&stars=true)](https://nodei.co/npm/vue-localstorage/)
 
+## Date
+
+[![NPM](https://nodei.co/npm/date-and-time.png?downloads=true&stars=true)](https://nodei.co/npm/date-and-time/)
 
 ## i18n
 

@@ -86,4 +86,47 @@ vue --version
 vue -V
 ```
 
+## Vue 3
 
+[Vue-3-Firebase](https://github.com/iamshaunjp/Vue-3-Firebase)
+
+```html
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Vue</title>
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+</head>
+<body>
+  <h1>Hello, Vue :)</h1>
+
+  <div id="app">
+    <p>{{ title }} - by {{ author }}, {{ age }} years old</p>
+  </div>
+
+  <!-- does not work -->
+  {{ title }}
+
+  <script src="app.js"></script>
+</body>
+</html>
+```
+
+app.js
+
+```js
+const app = Vue.createApp({
+  // data, functions etc
+  // template: '<h2>I am the template</h2>',
+  data() {
+    return {
+      title: 'The Way of Kings',
+      author: 'Brandon Sanderson',
+      age: 45
+    }
+  }
+})
+
+app.mount('#app')
+```

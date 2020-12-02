@@ -82,3 +82,28 @@ mode > horizontal / vertical
 ```
 
 > `<el-menu-item index="1">处理中心</el-menu-item>` not working check  `import './styles/element-variables.scss'`
+
+
+## element-ui中表单验证
+
+vue-typescript-admin-template [/views/login/index.vue](https://github.com/Armour/vue-typescript-admin-template/blob/master/src/views/login/index.vue)
+
+```html
+ <el-form
+      ref="loginForm"
+      :model="loginForm"
+      :rules="loginRules"
+ 
+ private loginRules = {
+    username: [{ validator: this.validateUsername, trigger: 'blur' }],
+    password: [{ validator: this.validatePassword, trigger: 'blur' }]
+  }
+
+  private validatePassword = (rule: any, value: string, callback: Function) => {
+    if (value.length < 6) {
+      callback(new Error('The password can not be less than 6 digits'))
+    } else {
+      callback()
+    }
+  }
+```

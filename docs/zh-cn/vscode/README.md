@@ -217,3 +217,7 @@ VSCode支持用户自定义的一些常用的代码片段，从而实现快捷�
 ## marketplace
 
 [简体与繁体互转](https://marketplace.visualstudio.com/items?itemName=cipchk.zh-hans-tt-hant-vscode)
+
+[vuejs/vetur](https://github.com/vuejs/vetur): Vue tooling for VS Code
+
+[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - Visual Studio Marketplace
