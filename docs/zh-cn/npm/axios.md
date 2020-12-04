@@ -99,3 +99,42 @@ Vue.http.interceptors.push((request, next) => {
     });
 });
 ```
+
+## axios post
+
+POST 將 Request Payload 改成 Form data
+`username=admin&password=abc1234&type=password`
+
+utils\request.ts
+
+```js
+const service = axios.create({
+  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
+  timeout: 5000
+  // withCredentials: true // send cookies when cross-domain requests
+})
+
+
+const convertSimpleObjToQueryString = (obj: string[]) => {
+  return Object.keys(obj)
+    .filter((k: any) => !isNil(obj[k]))
+    .map((k: any) => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k]))
+    .join('&')
+}
+
+// Request interceptors
+service.interceptors.request.use(
+  (config) => {
+    config.data = convertSimpleObjToQueryString(config.data)
+    // Add X-Access-Token header to every request, you can add other custom headers here
+    if (UserModule.token) {
+      config.headers['X-Access-Token'] = UserModule.token
+    }
+    config.headers['Accept-Language'] = 'zh-tw'
+    return config
+  },
+  (error) => {
+    Promise.reject(error)
+  }
+)
+````
