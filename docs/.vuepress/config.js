@@ -61,6 +61,7 @@ module.exports = {
                 text: '工具',
                 ariaLabel: '工具',
                 items: [
+                  { text: 'Tool', link: '/zh-cn/tool/' },
                   { text: 'VSCode', link: '/zh-cn/vscode/' },
                   { text: 'ESlint', link: '/zh-cn/eslint/' },
                   { text: 'Images', link: '/zh-cn/images/' },
