@@ -203,6 +203,7 @@ function genSidebarNPM (title, ui, api, utility, title5) {
         'vue-chartjs',
         'echarts',
         'swiper',
+        'vue-carousel',
         'nprogress',
         'icon'
       ]
