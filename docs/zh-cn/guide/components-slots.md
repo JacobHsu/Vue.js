@@ -273,3 +273,34 @@ template>
     }
 }
 ```
+
+### Modal 預設與具名插槽
+
+[ex](https://github.com/JacobHsu/vue3/commit/d50714d3787651d7eaf26250be9760c810f7f662)
+
+HelloWorld.vue
+
+```js
+ <Modal :heading="heading" :text="text" theme="sale" >
+      <h1>Ninja Givaway!</h1>
+      <p>Grab your ninja swag for half price!</p>
+      <template v-slot:links>
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
+    </Modal>
+```
+
+Modal.vue
+
+```html
+    <div class="modal" :class="{ sale: theme === 'sale' }">
+      <slot>default content (if no slot passed in)</slot>
+      <div class="actions">
+        <slot name="links"></slot>
+      </div>
+    </div>
+```
+
+ `<slot>` h1 p  
+ `<slot name="links">` template  
