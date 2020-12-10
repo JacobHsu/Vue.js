@@ -78,7 +78,6 @@ Vue.http.options.headers = {
     });
 ```
 
-
 ```js
 Vue.http.interceptors.push((request, next) => {
     //登录成功后将后台返回的TOKEN在本地存下来,每次请求从sessionStorage中拿到存储的TOKEN值
@@ -137,4 +136,26 @@ service.interceptors.request.use(
     Promise.reject(error)
   }
 )
-````
+```
+
+## get ip
+
+```js
+export const getIP = () => {
+  return axios('https://api.ipify.org?format=json')
+}
+```
+
+```js
+import { getIP } from '@/utils/request'
+  mounted() {
+    getIP().then(
+      res => {
+        this.ipAddress = res.data.ip
+      }
+    )
+  private handleLogin() {
+    this.loginForm = {
+      ipAddress: this.ipAddress || '127.0.0.1'
+    }
+```
