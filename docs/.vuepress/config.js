@@ -76,7 +76,7 @@ module.exports = {
             sidebar: {
               '/zh-cn/guide/': genSidebarConfig('指南', '计算属性和侦听器','组件', '复用', '内在'),
               '/zh-cn/api/': genSidebarAPI('API', 'Options'),
-              '/zh-cn/npm/': genSidebarNPM('套件', 'UI', 'API', 'Utility' ,'验证'),
+              '/zh-cn/npm/': genSidebarNPM('套件', 'UI', 'API', 'Utility' ,'验证', 'CLI'),
               '/zh-cn/style/': genSidebarStyle('风格'),
               '/zh-cn/vuex/': genSidebarVuex('Vuex', '核心概念'),
               '/zh-cn/vuerouter/': genSidebarVueRouter('VueRouter'),
@@ -172,8 +172,8 @@ function genSidebarAPI (title, title2) {
   ]
 }
 
-// '套件', 'UI', 'API', 'Utility' ,'验证'
-function genSidebarNPM (title, ui, api, utility, title5) {
+// '套件', 'UI', 'API', 'Utility' ,'验证', 'CLI'
+function genSidebarNPM (title, ui, api, utility, title5, cli) {
   return [
     {
       title,
@@ -234,6 +234,13 @@ function genSidebarNPM (title, ui, api, utility, title5) {
       collapsable: false,
       children: [
         'vee-validate'
+      ]
+    },
+    {
+      title: cli,
+      collapsable: false,
+      children: [
+        'npm-run-all'
       ]
     }
   ]
