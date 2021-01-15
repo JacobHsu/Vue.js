@@ -159,3 +159,65 @@ import { getIP } from '@/utils/request'
       ipAddress: this.ipAddress || '127.0.0.1'
     }
 ```
+
+## swagger
+
+[前后端联调之Form Data与Request Payload](https://segmentfault.com/a/1190000018774494)
+
+> swagger
+
+Parameter Type  body  
+Parameter Type  formData
+
+> Request Payload
+
+```js
+export const postAuthRegister = (address) => {
+    return fetch(
+        `${apiUat}/auth/register`,{
+        method: 'POST',
+        body: JSON.stringify({
+          authorizedAddress:address
+        }),
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          'Accept-Language': 'zh-tw'
+        })
+      }
+    )
+    .then((response) => response.json())
+    .then((data) => {
+  
+    return data
+    });
+  };
+```
+
+> Form Data
+
+```js
+  function convertSimpleObjToQueryString(obj) {
+    return Object.keys(obj)
+      //.filter(k => !isNil(obj[k]))
+      .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k]))
+      .join('&')
+  }
+  
+  export const postAuthLogin = (params) => {
+    return fetch(
+        `${apiUat}/auth/login`,{
+        method: 'POST',
+        body: convertSimpleObjToQueryString( {signature: params, grant_type:'password'}),
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept-Language': 'zh-tw'
+        })
+      }
+    )
+    .then((response) => response.json())
+    .then((data) => {
+  
+    return data
+    });
+  };
+```
