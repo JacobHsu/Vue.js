@@ -74,7 +74,7 @@ module.exports = {
               }
             ],
             sidebar: {
-              '/zh-cn/guide/': genSidebarConfig('指南', '计算属性和侦听器','组件', '复用', '内在'),
+              '/zh-cn/guide/': genSidebarConfig('指南', '开发','计算属性和侦听器','组件', '复用', '内在'),
               '/zh-cn/api/': genSidebarAPI('API', 'Options'),
               '/zh-cn/npm/': genSidebarNPM('套件', 'UI', 'API', 'Utility' ,'验证', 'CLI'),
               '/zh-cn/style/': genSidebarStyle('风格'),
@@ -98,8 +98,8 @@ module.exports = {
   }
 }
 
-// '指南', '组件', '复用', '内在'
-function genSidebarConfig (guide, computed, components, mixins, reactivity) {
+// '指南', '开发', '组件', '复用', '内在'
+function genSidebarConfig (guide, dev ,computed, components, mixins, reactivity) {
   return [
     {
       title: guide,
@@ -115,6 +115,13 @@ function genSidebarConfig (guide, computed, components, mixins, reactivity) {
         'syntax',
         'typescript',
         'react'
+      ]
+    },
+    {
+      title: dev,
+      collapsable: false,
+      children: [
+        'mode-and-env'
       ]
     },
     {
