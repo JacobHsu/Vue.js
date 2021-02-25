@@ -38,6 +38,68 @@ axios({
 });
 ```
 
+## Case
+
+[前端處理後端接口傳遞過來的圖片文件](https://codertw.com/程式語言/750541/)
+
+如果後端返了一個圖片文件過來，而非圖片地址，那要怎麼做？
+
+axios 添加option: `responseType: 'arraybuffer'
+
+request-img.ts
+
+```js
+import axios from 'axios'
+const service = axios.create({
+  baseURL: 'https://ex-uat-api.com', 
+  timeout: 5000
+})
+// Request interceptors
+service.interceptors.request.use(
+  (config) => {
+    if (UserModule.token) {
+      config.headers['X-Access-Token'] = UserModule.token
+      config.headers.Authorization = `bearer ${UserModule.token}`
+    } 
+
+    config.headers['Accept-Language'] = 'zh-tw'
+    config.responseType = 'arraybuffer' // <- add
+    return config
+  },
+  (error) => {
+    Promise.reject(error)
+  }
+)
+// Response interceptors
+service.interceptors.response.use(
+  (response) => {
+    return response.data
+  },
+  (error) => {
+    Message({
+      message: error.message,
+      type: 'error',
+      duration: 5 * 1000
+    })
+    return Promise.reject(error)
+  }
+)
+
+export default service
+```
+
+獲取到了我們需要的二進制數組(arrayBuffer)  
+下一步，我們要把圖片顯示處理，使用base64編碼即可  
+
+```js
+  const imgBinary = await getMemberIdImg(filename, {})
+  this.imgUrl  = 'data:image/png;base64,' + btoa(new Uint8Array(imgBinary).reduce((data, byte) => data + String.fromCharCode(byte), ''))
+```
+
+```html
+  <img :src="imgUrl" />
+```
+
 ## vue-resource
 
 [![NPM](https://nodei.co/npm/vue-resource.png?downloads=true&stars=true)](https://nodei.co/npm/vue-resource/)
