@@ -35,3 +35,10 @@ linux
 
 `mkdir <app-frontend>`  
 `sudo chwon -R ubuntu:ubuntu <platform-frontend-dir>`  
+
+## gcp
+
+退版的替代  
+
+流量遷移 [迁移和拆分流量](https://cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic?hl=zh-cn&refresh=1)  
+App Engine / 版本 > 遷移流量  

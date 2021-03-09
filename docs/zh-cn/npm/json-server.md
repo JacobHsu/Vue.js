@@ -22,3 +22,13 @@ $ json-server --watch db.json
 GET /posts?_page=7
 GET /posts?_page=7&_limit=20
 ```
+
+data/db.json
+
+```json
+{
+  "jobs": [
+      {"title":"ninja ux designer", "id":1, "details":"testing"}
+    ]
+}
+```
