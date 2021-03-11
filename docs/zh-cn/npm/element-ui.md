@@ -107,3 +107,23 @@ vue-typescript-admin-template [/views/login/index.vue](https://github.com/Armour
     }
   }
 ```
+
+## element-ui中[表单](https://element.eleme.io/#/zh-CN/component/form) [el-tooltip](https://element.eleme.io/#/zh-CN/component/tooltip)
+
+```html
+  <el-form-item prop="deposit">
+      <label slot="label">
+        {{$t('member.deposit')}}
+      <el-tooltip placement="right">
+        <div slot="content">tooltip</div>
+        <i class="el-icon-info" />
+      </el-tooltip>
+    </label>
+    <el-switch
+      :disabled="item.memberLevel === 0"
+      v-model="item.deposit"
+      :active-text="$t('switchOn')"
+      :inactive-text="$t('switchOff')">
+    </el-switch>
+  </el-form-item>
+```
