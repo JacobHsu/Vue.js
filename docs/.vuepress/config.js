@@ -79,7 +79,7 @@ module.exports = {
               '/zh-cn/npm/': genSidebarNPM('套件', 'UI', 'API', 'Utility' ,'验证', 'CLI'),
               '/zh-cn/style/': genSidebarStyle('风格'),
               '/zh-cn/vuex/': genSidebarVuex('Vuex', '核心概念'),
-              '/zh-cn/vuerouter/': genSidebarVueRouter('VueRouter'),
+              '/zh-cn/vuerouter/': genSidebarVueRouter('VueRouter','Debug'),
               '/zh-cn/vueloader/': genSidebarLoader('VueLoader')
             },
           },
@@ -291,7 +291,7 @@ function genSidebarVuex (title, title2) {
   ]
 }
 
-function genSidebarVueRouter (title) {
+function genSidebarVueRouter (title, debug) {
   return [
     {
       title,
@@ -302,6 +302,13 @@ function genSidebarVueRouter (title) {
         'redirect-and-alias',
         'navigation-guards',
         'history-mode'
+      ]
+    },
+    {
+      title: debug,
+      collapsable: false,
+      children: [
+        'debug'
       ]
     }
   ]
