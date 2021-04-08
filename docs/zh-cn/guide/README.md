@@ -131,6 +131,42 @@ const app = Vue.createApp({
 app.mount('#app')
 ```
 
+### Composition API
+
+Group logic together in a setup function
+Easily create reusable logic (functions)
+
+Options API
+```js
+export default {
+  data() {
+
+  },
+  methods: {
+
+  },
+  computed: {
+
+  },
+  //lifecycle hooks
+  mounted() {
+
+  }
+}
+```
+
+Composition API
+```js
+export default {
+  setup() {
+    //data
+    //methods
+    //computed
+    //lifecycle hooks
+  }
+}
+```
+
 ## env
 
 vue.config.js

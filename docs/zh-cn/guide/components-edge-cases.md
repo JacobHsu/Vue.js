@@ -85,6 +85,15 @@ this.$refs.usernameInput.focus()
 `$refs` 只会在组件渲染完成之后生效，并且它们不是响应式的。这仅作为一个用于直接操作子组件的“逃生舱”——你应该避免在模板或计算属性中访问 `$refs`。
 :::
 
+vue3-ref
+
+<iframe src="https://codesandbox.io/embed/vue3-ref-9gkx4?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="vue3-ref"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
 ## 依赖注入
 
 在我们描述访问父级组件实例的时候，展示过一个类似这样的例子：
