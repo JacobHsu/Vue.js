@@ -40,6 +40,30 @@ var vm = new Vue({
 })
 ```
 
+vue3 computed
+
+```js
+<template>
+  <div>
+    <input type="text" v-model="search">
+    <div v-for="name in matchingNames" :key="name">{{ name}}</div>
+  </div>
+</template>
+<script>
+import { computed, ref } from 'vue'
+export default {
+  setup() {
+    const search = ref('')
+    const names = ref(['Jacob','Jason','Eric','Kelly'])
+    const matchingNames = computed(()=>{
+      return names.value.filter((name)=>name.includess(search.value))
+    })
+    return { names, matchingNames, search}
+  }
+} 
+</script>
+```
+
 ## 计算属性 vs 侦听属性
 
 相同：`computed`和`watch`都起到監聽/依賴一個數據，並進行處理的作用
