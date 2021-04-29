@@ -108,7 +108,9 @@ vue-typescript-admin-template [/views/login/index.vue](https://github.com/Armour
   }
 ```
 
-## element-ui中[表单](https://element.eleme.io/#/zh-CN/component/form) [el-tooltip](https://element.eleme.io/#/zh-CN/component/tooltip)
+## element-ui中表单
+
+[表单](https://element.eleme.io/#/zh-CN/component/form) [el-tooltip](https://element.eleme.io/#/zh-CN/component/tooltip)
 
 ```html
   <el-form-item prop="deposit">
@@ -126,4 +128,30 @@ vue-typescript-admin-template [/views/login/index.vue](https://github.com/Armour
       :inactive-text="$t('switchOff')">
     </el-switch>
   </el-form-item>
+```
+
+## el-input
+
+[[Bug Report] v-model.number cannot enter decimal points](https://github.com/ElemeFE/element/issues/14330)
+
+v-model.number 無法輸入小數
+
+```html
+<el-form-item :label="$t('em.cannot_decimal')" prop="cannot_decimal">
+  <el-input
+    ref="cannot_decimal"
+    name="cannot_decimal"
+    v-model.number="item.cannot_decimal"
+    :placeholder="$t('cannot_decimal')"
+  />
+</el-form-item>
+<el-form-item :label="$t('decimal')" prop="decimal">
+  <el-input
+    ref="decimal"
+    name="decimal"
+    type="number"
+    v-model="item.decimal"
+    :placeholder="$t('decimal')"
+  />
+</el-form-item>
 ```
